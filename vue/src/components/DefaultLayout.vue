@@ -90,7 +90,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { useStore } from 'vuex';
+import store from '../stores';
 
 const navigation = [
     { name: 'Dashboard', to: { name: 'Dashboard' } },
@@ -112,7 +112,6 @@ export default {
         XMarkIcon
     },
     setup() {
-        const store = useStore();
         const user = computed(() => store.state.user.data);
         const router = useRouter();
 
